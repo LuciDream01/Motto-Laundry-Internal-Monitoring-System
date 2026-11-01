@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "MottoLaundry/1.0.0": {
+        "runtime": {
+          "MottoLaundry.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MottoLaundry/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

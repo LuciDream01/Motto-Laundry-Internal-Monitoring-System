@@ -8,4 +8,29 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Resources\Icon\MottoLaundryIcon.png" />
+    <None Remove="Resources\Image\MottoLaundryLogIn.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Services\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Resources\Color\" />
+    <Folder Include="Resources\Font\" />
+    <Folder Include="Views\Dashboard\" />
+    <Folder Include="Views\Report\" />
+    <Folder Include="Views\StatusMonitoring\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Icon\MottoLaundryIcon.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Image\MottoLaundryLogIn.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
 </Project>
