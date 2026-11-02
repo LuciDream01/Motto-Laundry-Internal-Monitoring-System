@@ -21,7 +21,7 @@ C:\Users\Reniel\Motto-Laundry-Internal-Monitoring-System\MottoLaundry\obj\Debug\
 C:\Users\Reniel\Motto-Laundry-Internal-Monitoring-System\MottoLaundry\obj\Debug\net10.0-windows\ref\MottoLaundry.dll
 C:\Users\Reniel\Motto-Laundry-Internal-Monitoring-System\MottoLaundry\obj\Debug\net10.0-windows\MottoLau.F36EBB35.Up2Date
 C:\Users\Reniel\Motto-Laundry-Internal-Monitoring-System\MottoLaundry\obj\Debug\net10.0-windows\Views\LogIn\LogInView.g.cs
-C:\Users\Reniel\Motto-Laundry-Internal-Monitoring-System\MottoLaundry\obj\Debug\net10.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\Reniel\Motto-Laundry-Internal-Monitoring-System\MottoLaundry\obj\Debug\net10.0-windows\Views\LogIn\LogInView.baml
 C:\Users\Reniel\Motto-Laundry-Internal-Monitoring-System\MottoLaundry\obj\Debug\net10.0-windows\Views\CustomerRecord\CustomerRecordView.g.cs
 C:\Users\Reniel\Motto-Laundry-Internal-Monitoring-System\MottoLaundry\obj\Debug\net10.0-windows\Views\CustomerRecord\CustomerRecordView.baml
+C:\Users\Reniel\Motto-Laundry-Internal-Monitoring-System\MottoLaundry\obj\Debug\net10.0-windows\GeneratedInternalTypeHelper.g.cs

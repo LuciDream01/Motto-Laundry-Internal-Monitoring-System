@@ -1,12 +1,250 @@
 ﻿<UserControl x:Class="MottoLaundry.Views.CustomerRecord.CustomerRecordView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:MottoLaundry.Views.CustomerRecord"
-             mc:Ignorable="d" 
-             d:DesignHeight="700" d:DesignWidth="1200">
+             mc:Ignorable="d"
+             d:DesignHeight="700"
+             d:DesignWidth="1200">
+
+    <UserControl.Resources>
+
+        <!-- SHARED SIDEBAR BUTTON STYLE -->
+        <Style x:Key="SidebarButtonStyle"
+               TargetType="Button">
+
+            <Setter Property="Background" Value="#030164"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+
+                        <Border x:Name="ButtonBorder"
+                                Background="{TemplateBinding Background}">
+
+                            <ContentPresenter
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <!-- HOVER EFFECT -->
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+                                <Setter TargetName="ButtonBorder"
+                                        Property="Background"
+                                        Value="#151394"/>
+                            </Trigger>
+
+                            <!-- PRESSED EFFECT -->
+                            <Trigger Property="IsPressed"
+                                     Value="True">
+                                <Setter TargetName="ButtonBorder"
+                                        Property="Background"
+                                        Value="#2523B0"/>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </UserControl.Resources>
+
+    <!-- MAIN LAYOUT -->
     <Grid Background="White">
-            
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- LEFT SIDEBAR -->
+        <Grid Grid.Column="0"
+              Background="#030164">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="250"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- LOGO AND TITLE -->
+            <Grid Grid.Row="0">
+
+                <Image Source="pack://application:,,,/Resources/Icon/MottoLaundryIcon.png"
+                       Width="260"
+                       Height="230"
+                       Stretch="Uniform"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Top"
+                       Margin="0,16,0,0"/>
+
+                <TextBlock Text="INTERNAL MANAGEMENT"
+                           Foreground="White"
+                           FontSize="16"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Bottom"/>
+
+            </Grid>
+
+            <!-- NAVIGATION TABS -->
+            <Grid Grid.Row="1"
+                  Margin="0,35,0,0">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- ======================= -->
+                <!-- DASHBOARD TAB -->
+                <!-- ======================= -->
+                <Button x:Name="BtnDashboard"
+                        Grid.Row="0"
+                        Style="{StaticResource SidebarButtonStyle}">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- DASHBOARD ICON PLACEHOLDER -->
+                        <Grid x:Name="GridDashboardIcon"
+                              Grid.Column="0">
+
+                            <!-- ADD DASHBOARD ICON HERE -->
+
+                        </Grid>
+
+                        <!-- DASHBOARD TEXT -->
+                        <TextBlock Grid.Column="1"
+                                   Text="Dashboard"
+                                   Foreground="White"
+                                   FontSize="14"
+                                   VerticalAlignment="Center"/>
+
+                    </Grid>
+                </Button>
+
+                <!-- ======================= -->
+                <!-- CUSTOMER RECORD TAB -->
+                <!-- ======================= -->
+                <Button x:Name="BtnCustomerRecord"
+                        Grid.Row="1"
+                        Style="{StaticResource SidebarButtonStyle}">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- CUSTOMER RECORD ICON PLACEHOLDER -->
+                        <Grid x:Name="GridCustomerRecordIcon"
+                              Grid.Column="0">
+
+                            <!-- ADD CUSTOMER RECORD ICON HERE -->
+
+                        </Grid>
+
+                        <!-- CUSTOMER RECORD TEXT -->
+                        <TextBlock Grid.Column="1"
+                                   Text="Customer Record"
+                                   Foreground="White"
+                                   FontSize="14"
+                                   VerticalAlignment="Center"/>
+
+                    </Grid>
+                </Button>
+
+                <!-- ======================= -->
+                <!-- ORDER MONITORING TAB -->
+                <!-- ======================= -->
+                <Button x:Name="BtnOrderMonitoring"
+                        Grid.Row="2"
+                        Style="{StaticResource SidebarButtonStyle}">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- ORDER MONITORING ICON PLACEHOLDER -->
+                        <Grid x:Name="GridOrderMonitoringIcon"
+                              Grid.Column="0">
+
+                            <!-- ADD ORDER MONITORING ICON HERE -->
+
+                        </Grid>
+
+                        <!-- ORDER MONITORING TEXT -->
+                        <TextBlock Grid.Column="1"
+                                   Text="Order Monitoring"
+                                   Foreground="White"
+                                   FontSize="14"
+                                   VerticalAlignment="Center"/>
+
+                    </Grid>
+                </Button>
+
+                <!-- ======================= -->
+                <!-- REPORT TAB -->
+                <!-- ======================= -->
+                <Button x:Name="BtnReport"
+                        Grid.Row="3"
+                        Style="{StaticResource SidebarButtonStyle}">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- REPORT ICON PLACEHOLDER -->
+                        <Grid x:Name="GridReportIcon"
+                              Grid.Column="0">
+
+                            <!-- ADD REPORT ICON HERE -->
+
+                        </Grid>
+
+                        <!-- REPORT TEXT -->
+                        <TextBlock Grid.Column="1"
+                                   Text="Report"
+                                   Foreground="White"
+                                   FontSize="14"
+                                   VerticalAlignment="Center"/>
+                    </Grid>
+                </Button>
+
+            </Grid>
+        </Grid>
+
+        <!-- RIGHT CONTENT AREA -->
+        <Grid Grid.Column="1"
+              Background="White">
+
+            <!-- CUSTOMER RECORD CONTENT GOES HERE -->
+
+        </Grid>
+
+
+
     </Grid>
 </UserControl>
