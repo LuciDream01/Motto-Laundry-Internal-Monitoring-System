@@ -163,7 +163,7 @@
                         Background="White"
                         BorderBrush="#555555"
                         BorderThickness="1"
-                        Cursor="Hand"/>
+                        Cursor="Hand" Click="LoginButton_Click"/>
 
             </StackPanel>
         </Grid>

@@ -20,4 +20,8 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
     }
+    public void SwitcView(UserControl newView)
+    {
+        MainContentControl.Content = newView;
+    }
 }

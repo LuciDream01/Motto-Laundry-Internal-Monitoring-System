@@ -11,7 +11,9 @@
         WindowStartupLocation="CenterScreen">
 
     <Grid Background="White">
-        <local2:CustomerRecordView/>
+        <ContentControl x:Name="MainContentControl">
+            <local:LogInView/>
+        </ContentControl>
     </Grid>
 
 </Window>
