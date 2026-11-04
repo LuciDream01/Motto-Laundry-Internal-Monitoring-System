@@ -84,7 +84,7 @@ namespace MottoLaundry.Views.LogIn {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MottoLaundry;component/views/login/loginview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MottoLaundry;V1.0.0.0;component/views/login/loginview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\LogIn\LogInView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

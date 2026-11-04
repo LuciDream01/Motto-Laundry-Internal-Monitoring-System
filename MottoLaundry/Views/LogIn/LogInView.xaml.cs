@@ -25,6 +25,7 @@ namespace MottoLaundry.Views.LogIn
         
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
+        //  LOGIN TESTING
             string usernameLogin = UsernameTextBox.Text;
             string passwordLogin = PasswordInput.Password;
 
