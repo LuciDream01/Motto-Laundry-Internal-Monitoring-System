@@ -2,7 +2,7 @@
 using System;
 using System.Collections.ObjectModel;
 using System.Windows.Controls;
-using CustomerRecordModel = MottoLaundry.Models.CustomerRecord;
+using CustomerRecordModel = MottoLaundry.Models.Customer;
 
 namespace MottoLaundry.Views.CustomerRecord
 {
@@ -24,21 +24,21 @@ namespace MottoLaundry.Views.CustomerRecord
             dgCustomerRecords.ItemsSource = records;
 
             // Sample data
-            records.Add(new CustomerRecordModel
-            {
-                TrackingNumber = "TRK-001",
-                CustomerName = "Juan Dela Cruz",
-                ServiceCode = "FULL",
-                Load = 5.5
-            });
+            //records.Add(new CustomerRecordModel
+            //{
+            //    TrackingNumber = "TRK-001",
+            //    CustomerName = "Juan Dela Cruz",
+            //    ServiceCode = "FULL",
+            //    Load = 5.5
+            //});
 
-            records.Add(new CustomerRecordModel
-            {
-                TrackingNumber = "TRK-002",
-                CustomerName = "Maria Santos",
-                ServiceCode = "SELF",
-                Load = 3.0
-            });
+            //records.Add(new CustomerRecordModel
+            //{
+            //    TrackingNumber = "TRK-002",
+            //    CustomerName = "Maria Santos",
+            //    ServiceCode = "SELF",
+            //    Load = 3.0
+            //});
         }
     }
 }
