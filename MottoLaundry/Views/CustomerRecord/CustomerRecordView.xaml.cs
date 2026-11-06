@@ -16,14 +16,14 @@ namespace MottoLaundry.Views.CustomerRecord
         {
             InitializeComponent();
 
-            // Current Date Calendar
-            txtCurrentDate.Text =
-                DateTime.Now.ToString("MMMM dd, yyyy");
+            //// Current Date Calendar
+            //txtCurrentDate.Text =
+            //    DateTime.Now.ToString("MMMM dd, yyyy");
 
-            // Connect collection to DataGrid
-            dgCustomerRecords.ItemsSource = records;
+            //// Connect collection to DataGrid
+            //dgCustomerRecords.ItemsSource = records;
 
-            // Sample data
+            //// Sample data
             //records.Add(new CustomerRecordModel
             //{
             //    TrackingNumber = "TRK-001",

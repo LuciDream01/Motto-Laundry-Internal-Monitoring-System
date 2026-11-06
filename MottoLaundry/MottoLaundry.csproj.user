@@ -5,7 +5,22 @@
     <Compile Update="Views\CustomerRecord\CustomerRecordView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Dashboard\Dashboard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\LeftContent\NavigationBarView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\LogIn\LogInView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\RightContent\Seaerch_Admin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\RightContent\Content.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\RightContent\StatusView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

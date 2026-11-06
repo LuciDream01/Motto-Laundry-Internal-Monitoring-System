@@ -25,3 +25,11 @@ C:\Users\Reniel\Motto-Laundry-Internal-Monitoring-System\MottoLaundry\obj\Debug\
 C:\Users\Reniel\Motto-Laundry-Internal-Monitoring-System\MottoLaundry\obj\Debug\net10.0-windows\Views\CustomerRecord\CustomerRecordView.g.cs
 C:\Users\Reniel\Motto-Laundry-Internal-Monitoring-System\MottoLaundry\obj\Debug\net10.0-windows\Views\CustomerRecord\CustomerRecordView.baml
 C:\Users\Reniel\Motto-Laundry-Internal-Monitoring-System\MottoLaundry\obj\Debug\net10.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\Reniel\Motto-Laundry-Internal-Monitoring-System\MottoLaundry\obj\Debug\net10.0-windows\Views\LeftContent\NavigationBarView.baml
+C:\Users\Reniel\Motto-Laundry-Internal-Monitoring-System\MottoLaundry\obj\Debug\net10.0-windows\Views\LeftContent\NavigationBarView.g.cs
+C:\Users\Reniel\Motto-Laundry-Internal-Monitoring-System\MottoLaundry\obj\Debug\net10.0-windows\Views\RightContent\Content.g.cs
+C:\Users\Reniel\Motto-Laundry-Internal-Monitoring-System\MottoLaundry\obj\Debug\net10.0-windows\Views\RightContent\Seaerch_Admin.g.cs
+C:\Users\Reniel\Motto-Laundry-Internal-Monitoring-System\MottoLaundry\obj\Debug\net10.0-windows\Views\RightContent\StatusView.g.cs
+C:\Users\Reniel\Motto-Laundry-Internal-Monitoring-System\MottoLaundry\obj\Debug\net10.0-windows\Views\RightContent\Content.baml
+C:\Users\Reniel\Motto-Laundry-Internal-Monitoring-System\MottoLaundry\obj\Debug\net10.0-windows\Views\RightContent\Seaerch_Admin.baml
+C:\Users\Reniel\Motto-Laundry-Internal-Monitoring-System\MottoLaundry\obj\Debug\net10.0-windows\Views\RightContent\StatusView.baml
