@@ -2,25 +2,34 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="Views\Components\SectionHeaderView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Components\SidebarView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Components\TopHeaderView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\CustomerRecord\AddOrderView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\CustomerRecord\CustomerRecordView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\Dashboard\Dashboard.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\LeftContent\NavigationBarView.xaml.cs">
+    <Compile Update="Views\Dashboard\DashboardView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\LogIn\LogInView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\RightContent\Seaerch_Admin.xaml.cs">
+    <Compile Update="Views\MainWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\RightContent\Content.xaml.cs">
+    <Compile Update="Views\Report\ReportView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\RightContent\StatusView.xaml.cs">
+    <Compile Update="Views\StatusMonitoring\StatusMonitoringView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

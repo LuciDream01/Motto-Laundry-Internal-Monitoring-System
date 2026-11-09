@@ -25,23 +25,6 @@ namespace MottoLaundry.Views.LogIn
         
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-        //  LOGIN TESTING
-            string usernameLogin = UsernameTextBox.Text;
-            string passwordLogin = PasswordInput.Password;
-
-            if (usernameLogin == "admin" && passwordLogin == "123")
-            {
-                MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
-
-                if (mainWindow != null)
-                {
-                    mainWindow.SwitcView(new Views.CustomerRecord.CustomerRecordView());
-                }
-            }
-            else
-            {
-                MessageBox.Show("Invalid username or password. Please try again.");
-            }
 
         }
     }

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET10_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NET9_0_OR_GREATER;NET10_0_OR_GREATER;NETCOREAPP1_0_OR_GREATER;NETCOREAPP1_1_OR_GREATER;NETCOREAPP2_0_OR_GREATER;NETCOREAPP2_1_OR_GREATER;NETCOREAPP2_2_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 C:\Users\Reniel\Motto-Laundry-Internal-Monitoring-System\MottoLaundry\App.xaml
-82050074877
+10823279311
 
-14-1969345673
+16469486305
 206-155403781
-Views\CustomerRecord\CustomerRecordView.xaml;Views\Dashboard\Dashboard.xaml;Views\LeftContent\NavigationBarView.xaml;Views\LogIn\LogInView.xaml;Views\MainWindow.xaml;Views\RightContent\Content.xaml;Views\RightContent\Seaerch_Admin.xaml;Views\RightContent\StatusView.xaml;
+Views\Components\SectionHeaderView.xaml;Views\Components\SidebarView.xaml;Views\Components\TopHeaderView.xaml;Views\CustomerRecord\AddOrderView.xaml;Views\CustomerRecord\CustomerRecordView.xaml;Views\Dashboard\DashboardView.xaml;Views\LogIn\LogInView.xaml;Views\MainWindow.xaml;Views\Report\ReportView.xaml;Views\StatusMonitoring\StatusMonitoringView.xaml;
 
-False
+True
 

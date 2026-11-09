@@ -1,21 +1,31 @@
-﻿<Window x:Class="MottoLaundry.MainWindow"
+﻿<Window x:Class="MottoLaundry.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="clr-namespace:MottoLaundry.Views.LogIn"
-        xmlns:local2="clr-namespace:MottoLaundry.Views.CustomerRecord"
-        xmlns:local3="clr-namespace:MottoLaundry.Views.CustomerRecord"
-        Title="Motto Laundry"
-        Height="700"
-        Width="1200"
-        MinHeight="550"
-        MinWidth="850"
-        WindowStartupLocation="CenterScreen">
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MottoLaundry.Views"
+        xmlns:login="clr-namespace:MottoLaundry.Views.LogIn"
+        xmlns:report="clr-namespace:MottoLaundry.Views.Report"
+        xmlns:addOrder="clr-namespace:MottoLaundry.Views.CustomerRecord"
+        xmlns:dashboard="clr-namespace:MottoLaundry.Views.Dashboard"
+        xmlns:statusMonitoring="clr-namespace:MottoLaundry.Views.StatusMonitoring"
+        xmlns:sideBar="clr-namespace:MottoLaundry.Views.Components"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="1200">
 
     <Grid Background="White">
-        <ContentControl x:Name="MainContentControl">
-            <local:LogInView/>
-        </ContentControl>
-    </Grid>
+        <Grid.ColumnDefinitions>
+            <!-- Left Navigation Sidebar -->
+            <ColumnDefinition Width="300"/>
+            <!-- Right Dynamic or Static Content Area -->
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
+        <!-- 1. Left Sidebar Component -->
+        <sideBar:SidebarView Grid.Column="0"/>
+
+        <!-- 2. Right Side Content View -->
+        <!-- You can swap this out or bind it to a ViewModel ContentControl later -->
+        <statusMonitoring:StatusMonitoringView Grid.Column="1"/>
+    </Grid>
 </Window>
-    
