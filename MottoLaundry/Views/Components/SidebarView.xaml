@@ -1,15 +1,19 @@
 ﻿<UserControl x:Class="MottoLaundry.Views.Components.SidebarView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:MottoLaundry.Views.Components"
-             mc:Ignorable="d" 
-             d:DesignHeight="700" d:DesignWidth="300">
+             mc:Ignorable="d"
+             d:DesignHeight="700"
+             d:DesignWidth="300">
 
     <UserControl.Resources>
+
         <!-- SIDEBAR BUTTON STYLE -->
-        <Style x:Key="SidebarButtonStyle" TargetType="Button">
+        <Style x:Key="SidebarButtonStyle"
+               TargetType="Button">
+
             <Setter Property="Background" Value="#030164"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontSize" Value="14"/>
@@ -21,28 +25,39 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
+
                         <Border x:Name="ButtonBorder"
                                 Background="{TemplateBinding Background}">
-                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+
+                            <ContentPresenter
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+
                         </Border>
 
                         <ControlTemplate.Triggers>
+
+                            <!-- HOVER EFFECT -->
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter TargetName="ButtonBorder"
                                         Property="Background"
                                         Value="#151394"/>
                             </Trigger>
+
+                            <!-- PRESSED EFFECT -->
                             <Trigger Property="IsPressed" Value="True">
                                 <Setter TargetName="ButtonBorder"
                                         Property="Background"
                                         Value="#2523B0"/>
                             </Trigger>
+
                         </ControlTemplate.Triggers>
+
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
+
     </UserControl.Resources>
 
     <!-- LEFT SIDEBAR ROOT -->
@@ -87,13 +102,16 @@
             <!-- DASHBOARD -->
             <Button x:Name="BtnDashboard"
                     Grid.Row="0"
+                    Click="BtnDashboard_Click"
                     Style="{StaticResource SidebarButtonStyle}">
+
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="90"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
+                    <!-- ICON PLACEHOLDER -->
                     <Grid x:Name="GridDashboardIcon"
                           Grid.Column="0"/>
 
@@ -103,18 +121,22 @@
                                FontSize="14"
                                VerticalAlignment="Center"/>
                 </Grid>
+
             </Button>
 
             <!-- CUSTOMER RECORD -->
             <Button x:Name="BtnCustomerRecord"
                     Grid.Row="1"
+                    Click="BtnCustomerRecord_Click"
                     Style="{StaticResource SidebarButtonStyle}">
+
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="90"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
+                    <!-- ICON PLACEHOLDER -->
                     <Grid x:Name="GridCustomerRecordIcon"
                           Grid.Column="0"/>
 
@@ -124,18 +146,22 @@
                                FontSize="14"
                                VerticalAlignment="Center"/>
                 </Grid>
+
             </Button>
 
             <!-- ORDER MONITORING -->
-            <Button x:Name="BtnOrderMonitoring"
+            <Button x:Name="BtnStatusMonitoring"
                     Grid.Row="2"
+                    Click="BtnStatusMonitoring_Click"
                     Style="{StaticResource SidebarButtonStyle}">
+
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="90"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
+                    <!-- ICON PLACEHOLDER -->
                     <Grid x:Name="GridOrderMonitoringIcon"
                           Grid.Column="0"/>
 
@@ -145,18 +171,22 @@
                                FontSize="14"
                                VerticalAlignment="Center"/>
                 </Grid>
+
             </Button>
 
             <!-- REPORT -->
             <Button x:Name="BtnReport"
                     Grid.Row="3"
+                    Click="BtnReport_Click"
                     Style="{StaticResource SidebarButtonStyle}">
+
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="90"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
+                    <!-- ICON PLACEHOLDER -->
                     <Grid x:Name="GridReportIcon"
                           Grid.Column="0"/>
 
@@ -166,8 +196,11 @@
                                FontSize="14"
                                VerticalAlignment="Center"/>
                 </Grid>
+
             </Button>
 
         </Grid>
+
     </Grid>
+
 </UserControl>

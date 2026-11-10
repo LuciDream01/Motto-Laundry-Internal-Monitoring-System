@@ -3,29 +3,52 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+
         xmlns:local="clr-namespace:MottoLaundry.Views"
         xmlns:login="clr-namespace:MottoLaundry.Views.LogIn"
         xmlns:report="clr-namespace:MottoLaundry.Views.Report"
         xmlns:addOrder="clr-namespace:MottoLaundry.Views.CustomerRecord"
         xmlns:dashboard="clr-namespace:MottoLaundry.Views.Dashboard"
         xmlns:statusMonitoring="clr-namespace:MottoLaundry.Views.StatusMonitoring"
-        xmlns:sideBar="clr-namespace:MottoLaundry.Views.Components"
+        xmlns:components="clr-namespace:MottoLaundry.Views.Components"
+
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="1200">
+        Title="Motto Laundry"
+        Height="700"
+        Width="1200"
+        MinHeight="600"
+        MinWidth="1000"
+        WindowStartupLocation="CenterScreen">
 
     <Grid Background="White">
+
         <Grid.ColumnDefinitions>
-            <!-- Left Navigation Sidebar -->
+
+            <!-- LEFT NAVIGATION SIDEBAR -->
             <ColumnDefinition Width="300"/>
-            <!-- Right Dynamic or Static Content Area -->
+
+            <!-- RIGHT DYNAMIC CONTENT -->
             <ColumnDefinition Width="*"/>
+
         </Grid.ColumnDefinitions>
 
-        <!-- 1. Left Sidebar Component -->
-        <sideBar:SidebarView Grid.Column="0"/>
+        <!-- SIDEBAR COMPONENT -->
+        <components:SidebarView
+            x:Name="Sidebar"
+            Grid.Column="0"/>
 
-        <!-- 2. Right Side Content View -->
-        <!-- You can swap this out or bind it to a ViewModel ContentControl later -->
-        <statusMonitoring:StatusMonitoringView Grid.Column="1"/>
+        <!-- MAIN CONTENT CONTAINER -->
+        <ContentControl
+            x:Name="MainContent"
+            Grid.Column="1"
+            HorizontalContentAlignment="Stretch"
+            VerticalContentAlignment="Stretch">
+
+            <!-- DEFAULT VIEW -->
+            <dashboard:DashboardView/>
+
+        </ContentControl>
+
     </Grid>
+
 </Window>

@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace MottoLaundry.Views.Components
 {
@@ -18,9 +10,41 @@ namespace MottoLaundry.Views.Components
     /// </summary>
     public partial class SidebarView : UserControl
     {
+        // Event that notifies MainWindow
+        // whenever a navigation button is clicked.
+        public event Action<string>? NavigationRequested;
+
         public SidebarView()
         {
             InitializeComponent();
+        }
+
+        // DASHBOARD
+        private void BtnDashboard_Click(
+            object sender, RoutedEventArgs e)
+        {
+            NavigationRequested?.Invoke("Dashboard");
+        }
+
+        // CUSTOMER RECORD
+        private void BtnCustomerRecord_Click(
+            object sender, RoutedEventArgs e)
+        {
+            NavigationRequested?.Invoke("CustomerRecord");
+        }
+
+        // ORDER MONITORING
+        private void BtnStatusMonitoring_Click(
+            object sender, RoutedEventArgs e)
+        {
+            NavigationRequested?.Invoke("StatusMonitoring");
+        }
+
+        // REPORT
+        private void BtnReport_Click(
+            object sender, RoutedEventArgs e)
+        {
+            NavigationRequested?.Invoke("Report");
         }
     }
 }

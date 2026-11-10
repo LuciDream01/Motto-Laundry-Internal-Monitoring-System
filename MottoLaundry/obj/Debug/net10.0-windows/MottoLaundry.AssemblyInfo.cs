@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MottoLaundry")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e7ebf462308440dcd12d076cbc4da260f78ed851")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9738d0a894db1415b10f3274e1d621a0fb3387d5")]
 [assembly: System.Reflection.AssemblyProductAttribute("MottoLaundry")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MottoLaundry")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

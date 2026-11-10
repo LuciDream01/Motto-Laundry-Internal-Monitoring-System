@@ -16,5 +16,5 @@ C:\Users\Reniel\Motto-Laundry-Internal-Monitoring-System\MottoLaundry\App.xaml
 206-155403781
 Views\Components\SectionHeaderView.xaml;Views\Components\SidebarView.xaml;Views\Components\TopHeaderView.xaml;Views\CustomerRecord\AddOrderView.xaml;Views\CustomerRecord\CustomerRecordView.xaml;Views\Dashboard\DashboardView.xaml;Views\LogIn\LogInView.xaml;Views\MainWindow.xaml;Views\Report\ReportView.xaml;Views\StatusMonitoring\StatusMonitoringView.xaml;
 
-True
+False
 
