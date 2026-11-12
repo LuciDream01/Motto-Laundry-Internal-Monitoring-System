@@ -26,7 +26,14 @@ namespace MottoLaundry.Views
                     break;
 
                 case "CustomerRecord":
-                    ChangeSection(new CustomerRecordView());
+                    var customerRecordView = new CustomerRecordView();
+
+                    customerRecordView.NavigateToAddOrderRequested += (s, e) =>
+                    {
+                        ChangeSection(new AddOrderView());
+                    };
+
+                    ChangeSection(customerRecordView);
                     break;
 
                 case "StatusMonitoring":

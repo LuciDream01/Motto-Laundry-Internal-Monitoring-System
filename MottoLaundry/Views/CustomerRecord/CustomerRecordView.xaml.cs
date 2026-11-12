@@ -1,8 +1,11 @@
 ﻿
 using System;
 using System.Collections.ObjectModel;
+using System.Drawing.Text;
+using System.Windows;
 using System.Windows.Controls;
-using CustomerRecordModel = MottoLaundry.Models.Customer;
+using System.Windows.Navigation;
+using CustomerRecordModel = MottoLaundry.Models.Orders;
 
 namespace MottoLaundry.Views.CustomerRecord
 {
@@ -12,18 +15,21 @@ namespace MottoLaundry.Views.CustomerRecord
         private ObservableCollection<CustomerRecordModel> records =
             new ObservableCollection<CustomerRecordModel>();
 
+        //  Event handler for switching to Add new order Interface
+        public event EventHandler NavigateToAddOrderRequested;
+
         public CustomerRecordView()
         {
             InitializeComponent();
 
-            //// Current Date Calendar
-            //txtCurrentDate.Text =
-            //    DateTime.Now.ToString("MMMM dd, yyyy");
+            // Current Date Calendar
+            txtCurrentDate.Text =
+                DateTime.Now.ToString("MMMM dd, yyyy");
 
-            //// Connect collection to DataGrid
-            //dgCustomerRecords.ItemsSource = records;
+            // Connect collection to DataGrid
+            dgCustomerRecords.ItemsSource = records;
 
-            //// Sample data
+            // Sample data
             //records.Add(new CustomerRecordModel
             //{
             //    TrackingNumber = "TRK-001",
@@ -39,6 +45,10 @@ namespace MottoLaundry.Views.CustomerRecord
             //    ServiceCode = "SELF",
             //    Load = 3.0
             //});
+        }
+        public void btnAddNewOrder_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateToAddOrderRequested?.Invoke(this, EventArgs.Empty);
         }
     }
 }

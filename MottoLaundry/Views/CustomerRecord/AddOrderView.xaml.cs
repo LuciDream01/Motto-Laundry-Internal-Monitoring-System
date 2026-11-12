@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MottoLaundry.ViewModel;
 
 namespace MottoLaundry.Views.CustomerRecord
 {
@@ -24,6 +25,8 @@ namespace MottoLaundry.Views.CustomerRecord
 
             txtCurrentDate.Text =
                 DateTime.Now.ToString("MMMM dd, yyyy");
+
+            this.DataContext = new CustomerRecordViewModel();
         }
     }
 }

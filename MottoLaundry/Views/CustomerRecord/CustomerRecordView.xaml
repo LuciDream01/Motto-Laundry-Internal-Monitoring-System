@@ -239,7 +239,8 @@
                     <Button x:Name="btnAddNewOrder"
                             Grid.Row="2"
                             Style="{StaticResource AddOrderButtonStyle}"
-                            FontSize="12">
+                            FontSize="12"
+                            Click="btnAddNewOrder_Click">
 
                         <StackPanel Orientation="Horizontal">
 
@@ -290,7 +291,7 @@
 
                         <!-- TRACKING NUMBER -->
                         <DataGridTextColumn Header="Tracking #"
-                                            Binding="{Binding TrackingNumber}"
+                                            Binding="{Binding TrackingNumbers}"
                                             ElementStyle="{StaticResource CenteredTextStyle}"
                                             Width="*"/>
 

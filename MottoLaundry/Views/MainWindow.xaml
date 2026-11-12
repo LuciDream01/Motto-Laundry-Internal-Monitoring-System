@@ -45,7 +45,7 @@
             VerticalContentAlignment="Stretch">
 
             <!-- DEFAULT VIEW -->
-            <dashboard:DashboardView/>
+            <addOrder:CustomerRecordView/>
 
         </ContentControl>
 
