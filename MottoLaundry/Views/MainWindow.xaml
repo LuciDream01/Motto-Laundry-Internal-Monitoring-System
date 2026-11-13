@@ -3,15 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-
-        xmlns:local="clr-namespace:MottoLaundry.Views"
-        xmlns:login="clr-namespace:MottoLaundry.Views.LogIn"
-        xmlns:report="clr-namespace:MottoLaundry.Views.Report"
-        xmlns:addOrder="clr-namespace:MottoLaundry.Views.CustomerRecord"
-        xmlns:dashboard="clr-namespace:MottoLaundry.Views.Dashboard"
-        xmlns:statusMonitoring="clr-namespace:MottoLaundry.Views.StatusMonitoring"
         xmlns:components="clr-namespace:MottoLaundry.Views.Components"
-
         mc:Ignorable="d"
         Title="Motto Laundry"
         Height="700"
@@ -23,31 +15,24 @@
     <Grid Background="White">
 
         <Grid.ColumnDefinitions>
-
-            <!-- LEFT NAVIGATION SIDEBAR -->
+            <!-- LEFT SIDEBAR -->
             <ColumnDefinition Width="300"/>
 
             <!-- RIGHT DYNAMIC CONTENT -->
             <ColumnDefinition Width="*"/>
-
         </Grid.ColumnDefinitions>
 
-        <!-- SIDEBAR COMPONENT -->
+        <!-- SIDEBAR -->
         <components:SidebarView
             x:Name="Sidebar"
             Grid.Column="0"/>
 
-        <!-- MAIN CONTENT CONTAINER -->
+        <!-- RIGHT CONTENT -->
         <ContentControl
             x:Name="MainContent"
             Grid.Column="1"
             HorizontalContentAlignment="Stretch"
-            VerticalContentAlignment="Stretch">
-
-            <!-- DEFAULT VIEW -->
-            <addOrder:CustomerRecordView/>
-
-        </ContentControl>
+            VerticalContentAlignment="Stretch"/>
 
     </Grid>
 

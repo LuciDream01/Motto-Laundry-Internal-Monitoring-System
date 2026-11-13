@@ -1,32 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
+﻿
+using System;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using MottoLaundry.ViewModel;
 
 namespace MottoLaundry.Views.CustomerRecord
 {
-    /// <summary>
-    /// Interaction logic for AddOrderView.xaml
-    /// </summary>
     public partial class AddOrderView : UserControl
     {
-        public AddOrderView()
+        public AddOrderView(CustomerRecordViewModel viewModel)
         {
             InitializeComponent();
 
+            // Display current date
             txtCurrentDate.Text =
                 DateTime.Now.ToString("MMMM dd, yyyy");
 
-            this.DataContext = new CustomerRecordViewModel();
+            // Use shared ViewModel from MainWindow
+            DataContext = viewModel;
         }
     }
 }

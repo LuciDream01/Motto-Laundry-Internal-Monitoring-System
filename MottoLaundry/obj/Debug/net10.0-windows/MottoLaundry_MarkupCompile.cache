@@ -12,8 +12,8 @@ TRACE;DEBUG;NET;NET10_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_O
 C:\Users\Reniel\Motto-Laundry-Internal-Monitoring-System\MottoLaundry\App.xaml
 10823279311
 
-25-315381918
-206-155403781
+271604898683
+221130277046
 Views\Components\SectionHeaderView.xaml;Views\Components\SidebarView.xaml;Views\Components\TopHeaderView.xaml;Views\CustomerRecord\AddOrderView.xaml;Views\CustomerRecord\CustomerRecordView.xaml;Views\Dashboard\DashboardView.xaml;Views\LogIn\LogInView.xaml;Views\MainWindow.xaml;Views\Report\ReportView.xaml;Views\StatusMonitoring\StatusMonitoringView.xaml;
 
 False

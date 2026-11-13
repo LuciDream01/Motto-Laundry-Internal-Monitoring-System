@@ -645,6 +645,8 @@
 
                                 <!-- WASHING -->
                                 <CheckBox x:Name="chkWashing"
+                                           Checked="StageCheckBox_Changed"
+                                           Unchecked="StageCheckBox_Changed"
                                           Grid.Row="0"
                                           Grid.Column="0"
                                           Style="{StaticResource StageCheckBoxStyle}"/>
@@ -656,6 +658,7 @@
                                            FontSize="13"/>
 
                                 <ComboBox x:Name="cmbWashing"
+                                           SelectionChanged="StageCombo_SelectionChanged"
                                           Grid.Row="0"
                                           Grid.Column="2"
                                           Style="{StaticResource StageComboStyle}"/>
@@ -667,6 +670,8 @@
 
                                 <!-- DRYING -->
                                 <CheckBox x:Name="chkDrying"
+                                           Checked="StageCheckBox_Changed"
+                                           Unchecked="StageCheckBox_Changed"
                                           Grid.Row="1"
                                           Grid.Column="0"
                                           Style="{StaticResource StageCheckBoxStyle}"/>
@@ -678,6 +683,7 @@
                                            FontSize="13"/>
 
                                 <ComboBox x:Name="cmbDrying"
+                                           SelectionChanged="StageCombo_SelectionChanged"
                                           Grid.Row="1"
                                           Grid.Column="2"
                                           Style="{StaticResource StageComboStyle}"/>
@@ -689,6 +695,8 @@
 
                                 <!-- FOLDING -->
                                 <CheckBox x:Name="chkFolding"
+                                           Checked="StageCheckBox_Changed"
+                                           Unchecked="StageCheckBox_Changed"
                                           Grid.Row="2"
                                           Grid.Column="0"
                                           Style="{StaticResource StageCheckBoxStyle}"/>
@@ -700,6 +708,7 @@
                                            FontSize="13"/>
 
                                 <ComboBox x:Name="cmbFolding"
+                                           SelectionChanged="StageCombo_SelectionChanged"
                                           Grid.Row="2"
                                           Grid.Column="2"
                                           Style="{StaticResource StageComboStyle}"/>
@@ -711,6 +720,8 @@
 
                                 <!-- PACKING -->
                                 <CheckBox x:Name="chkPacking"
+                                           Checked="StageCheckBox_Changed"
+                                           Unchecked="StageCheckBox_Changed"
                                           Grid.Row="3"
                                           Grid.Column="0"
                                           Style="{StaticResource StageCheckBoxStyle}"/>
@@ -722,6 +733,7 @@
                                            FontSize="13"/>
 
                                 <ComboBox x:Name="cmbPacking"
+                                           SelectionChanged="StageCombo_SelectionChanged"
                                           Grid.Row="3"
                                           Grid.Column="2"
                                           Style="{StaticResource StageComboStyle}"/>

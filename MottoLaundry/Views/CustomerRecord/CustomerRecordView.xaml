@@ -291,7 +291,7 @@
 
                         <!-- TRACKING NUMBER -->
                         <DataGridTextColumn Header="Tracking #"
-                                            Binding="{Binding TrackingNumbers}"
+                                            Binding="{Binding TrackingNumber}"
                                             ElementStyle="{StaticResource CenteredTextStyle}"
                                             Width="*"/>
 

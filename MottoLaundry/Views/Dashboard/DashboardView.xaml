@@ -80,6 +80,29 @@
             <Setter Property="BorderBrush" Value="#DDDDDD"/>
         </Style>
 
+        <!-- INSERTED ORDER DATA TEXT ONLY (HEADERS UNCHANGED) -->
+        <Style x:Key="CenteredTextStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+        </Style>
+
+        <Style x:Key="TableRowStyle" TargetType="DataGridRow">
+            <Setter Property="Height" Value="44"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderThickness" Value="0,0,0,1"/>
+            <Setter Property="BorderBrush" Value="#EEEEEE"/>
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="#E8E8FF"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
         <!-- DATAGRID CELL STYLE -->
         <Style x:Key="TableCellStyle" TargetType="DataGridCell">
             <Setter Property="BorderThickness" Value="0"/>
@@ -429,7 +452,7 @@
                 <!-- ORDER TABLE -->
                 <Border Grid.Column="0"
                         Style="{StaticResource CardStyle}"
-                        Padding="10">
+                        Padding="5">
 
                     <DataGrid x:Name="dgOrders"
                               AutoGenerateColumns="False"
@@ -441,36 +464,47 @@
                               GridLinesVisibility="None"
                               ColumnHeaderStyle="{StaticResource TableHeaderStyle}"
                               CellStyle="{StaticResource TableCellStyle}"
+                              RowStyle="{StaticResource TableRowStyle}"
+                              HorizontalScrollBarVisibility="Auto"
+                              VerticalScrollBarVisibility="Auto"
                               RowHeaderWidth="0">
 
                         <DataGrid.Columns>
 
                             <DataGridTextColumn Header="Tracking #"
                                                 Binding="{Binding TrackingNumber}"
+                                                ElementStyle="{StaticResource CenteredTextStyle}"
                                                 Width="*"/>
 
                             <DataGridTextColumn Header="Name"
                                                 Binding="{Binding CustomerName}"
+                                                ElementStyle="{StaticResource CenteredTextStyle}"
                                                 Width="*"/>
 
                             <DataGridTextColumn Header="Service Code"
                                                 Binding="{Binding ServiceCode}"
+                                                ElementStyle="{StaticResource CenteredTextStyle}"
                                                 Width="*"/>
 
                             <DataGridTextColumn Header="Service Status"
                                                 Binding="{Binding ServiceStatus}"
+                                                ElementStyle="{StaticResource CenteredTextStyle}"
                                                 Width="*"/>
 
                             <DataGridTextColumn Header="Progress Stage"
                                                 Binding="{Binding ProgressStage}"
+                                                ElementStyle="{StaticResource CenteredTextStyle}"
                                                 Width="*"/>
 
                             <DataGridTextColumn Header="Turnaround Time"
-                                                Binding="{Binding TurnaroundTime}"
-                                                Width="*"/>
+                                                Binding="{Binding TurnAroundTime,
+                                                          StringFormat={}{0} Hours}"
+                                                ElementStyle="{StaticResource CenteredTextStyle}"
+                                                Width="*"/>     
 
                             <DataGridTextColumn Header="Schedule Status"
                                                 Binding="{Binding ScheduleStatus}"
+                                                ElementStyle="{StaticResource CenteredTextStyle}"
                                                 Width="*"/>
 
                         </DataGrid.Columns>
