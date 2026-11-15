@@ -1,36 +1,31 @@
-﻿
-using MottoLaundry.ViewModel;
-using System;
-using System.Collections.ObjectModel;
-using System.Drawing.Text;
+﻿using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Navigation;
 using MottoLaundry.ViewModel;
 
 namespace MottoLaundry.Views.CustomerRecord
 {
     public partial class CustomerRecordView : UserControl
     {
-        // Collection of customer 
+        private readonly CustomerRecordViewModel _viewModel;
 
-        //  Event handler for switching to Add new order Interface
-        public event EventHandler NavigateToAddOrderRequested;
+        // Event that MainWindow is listening for
+        public event EventHandler? NavigateToAddOrderRequested;
 
         public CustomerRecordView(CustomerRecordViewModel viewModel)
         {
             InitializeComponent();
+            _viewModel = viewModel;
 
-            // Current Date Calendar
             txtCurrentDate.Text = DateTime.Now.ToString("MMMM dd, yyyy");
 
-            // Retrieving Data from View Model to Display on the DataGridView
-            DataContext = viewModel;
-            dgCustomerRecords.ItemsSource = viewModel.CustomerRecordData;
-            
+            // Bind the DataGrid to the shared Orders collection in the ViewModel
+            dgCustomerRecords.ItemsSource = _viewModel.Orders;
         }
-        public void btnAddNewOrder_Click(object sender, RoutedEventArgs e)
+
+        private void btnAddNewOrder_Click(object sender, RoutedEventArgs e)
         {
+            // Trigger the event so MainWindow switches to AddOrderView
             NavigateToAddOrderRequested?.Invoke(this, EventArgs.Empty);
         }
     }

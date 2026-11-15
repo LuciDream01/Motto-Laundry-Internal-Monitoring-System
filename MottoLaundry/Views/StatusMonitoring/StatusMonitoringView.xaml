@@ -68,8 +68,7 @@
         </Style>
 
         <!-- DATAGRID HEADER -->
-        <Style x:Key="TableHeaderStyle"
-               TargetType="DataGridColumnHeader">
+        <Style x:Key="TableHeaderStyle" TargetType="DataGridColumnHeader">
             <Setter Property="Background" Value="White"/>
             <Setter Property="Foreground" Value="#08065E"/>
             <Setter Property="FontSize" Value="11"/>
@@ -104,24 +103,19 @@
             <Setter Property="FontSize" Value="12"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Background" Value="#FCA5A5"/>
             <Setter Property="Margin" Value="3,3"/>
+            <Setter Property="Background" Value="#FCA5A5"/>
 
             <Style.Triggers>
-                <DataTrigger Binding="{Binding SelectedItem,
-                    RelativeSource={RelativeSource Self}}"
+                <DataTrigger Binding="{Binding SelectedItem, RelativeSource={RelativeSource Self}}"
                              Value="Completed">
                     <Setter Property="Background" Value="#A7F3D0"/>
                 </DataTrigger>
-
-                <DataTrigger Binding="{Binding SelectedItem,
-                    RelativeSource={RelativeSource Self}}"
+                <DataTrigger Binding="{Binding SelectedItem, RelativeSource={RelativeSource Self}}"
                              Value="Current">
                     <Setter Property="Background" Value="#FDBA9A"/>
                 </DataTrigger>
-
-                <DataTrigger Binding="{Binding SelectedItem,
-                    RelativeSource={RelativeSource Self}}"
+                <DataTrigger Binding="{Binding SelectedItem, RelativeSource={RelativeSource Self}}"
                              Value="Not Started">
                     <Setter Property="Background" Value="#FCA5A5"/>
                 </DataTrigger>
@@ -137,14 +131,6 @@
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="Margin" Value="3,3"/>
-        </Style>
-
-        <!-- STAGE CHECKBOX -->
-        <Style x:Key="StageCheckBoxStyle" TargetType="CheckBox">
-            <Setter Property="Width" Value="22"/>
-            <Setter Property="Height" Value="22"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
         </Style>
 
     </UserControl.Resources>
@@ -215,8 +201,7 @@
         </Border>
 
         <!-- MAIN CONTENT -->
-        <Grid Grid.Row="1"
-              Margin="18,20,15,18">
+        <Grid Grid.Row="1" Margin="18,20,15,18">
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="110"/>
@@ -228,7 +213,6 @@
 
             <!-- TITLE AND DATE -->
             <Grid Grid.Row="0">
-
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="15"/>
@@ -271,7 +255,6 @@
                                    Margin="0,0,8,0"/>
 
                         <StackPanel VerticalAlignment="Center">
-
                             <TextBlock Text="Today"
                                        FontSize="10"
                                        Foreground="#08065E"/>
@@ -288,149 +271,84 @@
             <UniformGrid Grid.Row="2" Columns="6">
 
                 <!-- INTAKE -->
-                <Border Style="{StaticResource CardStyle}"
-                        Margin="5" Padding="8">
+                <Border Style="{StaticResource CardStyle}" Margin="5" Padding="8">
                     <StackPanel VerticalAlignment="Center">
-
-                        <StackPanel Orientation="Horizontal"
-                                    HorizontalAlignment="Center">
-                            <Image x:Name="imgIntake"
-                                   Width="24" Height="24"
-                                   Margin="0,0,5,0"/>
-                            <TextBlock Text="Intake"
-                                       Style="{StaticResource StatusTitleStyle}"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Image Width="24" Height="24" Margin="0,0,5,0"/>
+                            <TextBlock Text="Intake" Style="{StaticResource StatusTitleStyle}"/>
                         </StackPanel>
-
-                        <TextBlock x:Name="txtIntakeCount"
-                                   Text="15"
-                                   Style="{StaticResource StatusNumberStyle}"/>
-
-                        <TextBlock Text="View Intake"
-                                   Style="{StaticResource StatusDescriptionStyle}"/>
+                        <TextBlock x:Name="txtIntakeCount" Text="0" Style="{StaticResource StatusNumberStyle}"/>
+                        <TextBlock Text="View Intake" Style="{StaticResource StatusDescriptionStyle}"/>
                     </StackPanel>
                 </Border>
 
                 <!-- NOT STARTED -->
-                <Border Style="{StaticResource CardStyle}"
-                        Margin="5" Padding="8">
+                <Border Style="{StaticResource CardStyle}" Margin="5" Padding="8">
                     <StackPanel VerticalAlignment="Center">
-
-                        <StackPanel Orientation="Horizontal"
-                                    HorizontalAlignment="Center">
-                            <Image x:Name="imgNotStarted"
-                                   Width="24" Height="24"
-                                   Margin="0,0,5,0"/>
-                            <TextBlock Text="Not Started"
-                                       Style="{StaticResource StatusTitleStyle}"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Image Width="24" Height="24" Margin="0,0,5,0"/>
+                            <TextBlock Text="Not Started" Style="{StaticResource StatusTitleStyle}"/>
                         </StackPanel>
-
-                        <TextBlock x:Name="txtNotStartedCount"
-                                   Text="3"
-                                   Style="{StaticResource StatusNumberStyle}"/>
-
-                        <TextBlock Text="View Pending"
-                                   Style="{StaticResource StatusDescriptionStyle}"/>
+                        <TextBlock x:Name="txtNotStartedCount" Text="0" Style="{StaticResource StatusNumberStyle}"/>
+                        <TextBlock Text="View Pending" Style="{StaticResource StatusDescriptionStyle}"/>
                     </StackPanel>
                 </Border>
 
                 <!-- IN PROGRESS -->
-                <Border Style="{StaticResource CardStyle}"
-                        Margin="5" Padding="8">
+                <Border Style="{StaticResource CardStyle}" Margin="5" Padding="8">
                     <StackPanel VerticalAlignment="Center">
-
-                        <StackPanel Orientation="Horizontal"
-                                    HorizontalAlignment="Center">
-                            <Image x:Name="imgInProgress"
-                                   Width="24" Height="24"
-                                   Margin="0,0,5,0"/>
-                            <TextBlock Text="In Progress"
-                                       Style="{StaticResource StatusTitleStyle}"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Image Width="24" Height="24" Margin="0,0,5,0"/>
+                            <TextBlock Text="In Progress" Style="{StaticResource StatusTitleStyle}"/>
                         </StackPanel>
-
-                        <TextBlock x:Name="txtInProgressCount"
-                                   Text="5"
-                                   Style="{StaticResource StatusNumberStyle}"/>
-
-                        <TextBlock Text="View In Progress"
-                                   Style="{StaticResource StatusDescriptionStyle}"/>
+                        <TextBlock x:Name="txtInProgressCount" Text="0" Style="{StaticResource StatusNumberStyle}"/>
+                        <TextBlock Text="View In Progress" Style="{StaticResource StatusDescriptionStyle}"/>
                     </StackPanel>
                 </Border>
 
                 <!-- COMPLETED -->
-                <Border Style="{StaticResource CardStyle}"
-                        Margin="5" Padding="8">
+                <Border Style="{StaticResource CardStyle}" Margin="5" Padding="8">
                     <StackPanel VerticalAlignment="Center">
-
-                        <StackPanel Orientation="Horizontal"
-                                    HorizontalAlignment="Center">
-                            <Image x:Name="imgCompleted"
-                                   Width="24" Height="24"
-                                   Margin="0,0,5,0"/>
-                            <TextBlock Text="Completed"
-                                       Style="{StaticResource StatusTitleStyle}"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Image Width="24" Height="24" Margin="0,0,5,0"/>
+                            <TextBlock Text="Completed" Style="{StaticResource StatusTitleStyle}"/>
                         </StackPanel>
-
-                        <TextBlock x:Name="txtCompletedCount"
-                                   Text="2"
-                                   Style="{StaticResource StatusNumberStyle}"/>
-
-                        <TextBlock Text="View Completed"
-                                   Style="{StaticResource StatusDescriptionStyle}"/>
+                        <TextBlock x:Name="txtCompletedCount" Text="0" Style="{StaticResource StatusNumberStyle}"/>
+                        <TextBlock Text="View Completed" Style="{StaticResource StatusDescriptionStyle}"/>
                     </StackPanel>
                 </Border>
 
                 <!-- UNCLAIMED -->
-                <Border Style="{StaticResource CardStyle}"
-                        Margin="5" Padding="8">
+                <Border Style="{StaticResource CardStyle}" Margin="5" Padding="8">
                     <StackPanel VerticalAlignment="Center">
-
-                        <StackPanel Orientation="Horizontal"
-                                    HorizontalAlignment="Center">
-                            <Image x:Name="imgUnclaimed"
-                                   Width="24" Height="24"
-                                   Margin="0,0,5,0"/>
-                            <TextBlock Text="Unclaimed"
-                                       Style="{StaticResource StatusTitleStyle}"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Image Width="24" Height="24" Margin="0,0,5,0"/>
+                            <TextBlock Text="Unclaimed" Style="{StaticResource StatusTitleStyle}"/>
                         </StackPanel>
-
-                        <TextBlock x:Name="txtUnclaimedCount"
-                                   Text="5"
-                                   Style="{StaticResource StatusNumberStyle}"/>
-
-                        <TextBlock Text="View Unclaimed"
-                                   Style="{StaticResource StatusDescriptionStyle}"/>
+                        <TextBlock x:Name="txtUnclaimedCount" Text="0" Style="{StaticResource StatusNumberStyle}"/>
+                        <TextBlock Text="View Unclaimed" Style="{StaticResource StatusDescriptionStyle}"/>
                     </StackPanel>
                 </Border>
 
                 <!-- DISPATCHED -->
-                <Border Style="{StaticResource CardStyle}"
-                        Margin="5" Padding="8">
+                <Border Style="{StaticResource CardStyle}" Margin="5" Padding="8">
                     <StackPanel VerticalAlignment="Center">
-
-                        <StackPanel Orientation="Horizontal"
-                                    HorizontalAlignment="Center">
-                            <Image x:Name="imgDispatched"
-                                   Width="24" Height="24"
-                                   Margin="0,0,5,0"/>
-                            <TextBlock Text="Dispatched"
-                                       Style="{StaticResource StatusTitleStyle}"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Image Width="24" Height="24" Margin="0,0,5,0"/>
+                            <TextBlock Text="Dispatched" Style="{StaticResource StatusTitleStyle}"/>
                         </StackPanel>
-
-                        <TextBlock x:Name="txtDispatchedCount"
-                                   Text="2"
-                                   Style="{StaticResource StatusNumberStyle}"/>
-
-                        <TextBlock Text="View Dispatched"
-                                   Style="{StaticResource StatusDescriptionStyle}"/>
+                        <TextBlock x:Name="txtDispatchedCount" Text="0" Style="{StaticResource StatusNumberStyle}"/>
+                        <TextBlock Text="View Dispatched" Style="{StaticResource StatusDescriptionStyle}"/>
                     </StackPanel>
                 </Border>
+
             </UniformGrid>
 
             <!-- DYNAMIC ORDER WORKSPACE -->
             <Grid Grid.Row="4" x:Name="OrderWorkspace">
 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition x:Name="OrdersColumn" Width="*"/>
+                    <ColumnDefinition x:Name="OrdersColumn" Width="*" MinWidth="0"/>
                     <ColumnDefinition x:Name="DetailsGapColumn" Width="0"/>
                     <ColumnDefinition x:Name="DetailsColumn" Width="0"/>
                 </Grid.ColumnDefinitions>
@@ -438,7 +356,8 @@
                 <!-- LEFT: ORDERS DATAGRID -->
                 <Border Grid.Column="0"
                         Style="{StaticResource CardStyle}"
-                        Padding="12">
+                        Padding="12"
+                        MinWidth="0">
 
                     <DataGrid x:Name="dgOrders"
                               AutoGenerateColumns="False"
@@ -459,56 +378,71 @@
                               SelectionChanged="dgOrders_SelectionChanged">
 
                         <DataGrid.Columns>
+
                             <DataGridTextColumn Header="Tracking #"
-                                                Binding="{Binding TrackingNumber}"
-                                                ElementStyle="{StaticResource CenteredTextStyle}"
-                                                Width="*"/>
+                                                  Binding="{Binding TrackingNumber}"
+                                                  ElementStyle="{StaticResource CenteredTextStyle}"
+                                                  MinWidth="90"
+                                                  Width="*"/>
+
                             <DataGridTextColumn Header="Name"
-                                                Binding="{Binding CustomerName}"
-                                                ElementStyle="{StaticResource CenteredTextStyle}"
-                                                Width="1.2*"/>
+                                                  Binding="{Binding CustomerName}"
+                                                  ElementStyle="{StaticResource CenteredTextStyle}"
+                                                  MinWidth="130"
+                                                  Width="1.2*"/>
+
                             <DataGridTextColumn Header="Service Code"
-                                                Binding="{Binding ServiceCode}"
-                                                ElementStyle="{StaticResource CenteredTextStyle}"
-                                                Width="*"/>
+                                                  Binding="{Binding ServiceCode}"
+                                                  ElementStyle="{StaticResource CenteredTextStyle}"
+                                                  MinWidth="100"
+                                                  Width="*"/>
+
                             <DataGridTextColumn Header="Service Status"
-                                                Binding="{Binding ServiceStatus}"
-                                                ElementStyle="{StaticResource CenteredTextStyle}"
-                                                Width="*"/>
+                                                  Binding="{Binding ServiceStatus}"
+                                                  ElementStyle="{StaticResource CenteredTextStyle}"
+                                                  MinWidth="110"
+                                                  Width="*"/>
+
                             <DataGridTextColumn Header="Progress Stage"
-                                                Binding="{Binding ProgressStage}"
-                                                ElementStyle="{StaticResource CenteredTextStyle}"
-                                                Width="*"/>
+                                                  Binding="{Binding ProgressStage}"
+                                                  ElementStyle="{StaticResource CenteredTextStyle}"
+                                                  MinWidth="110"
+                                                  Width="*"/>
+
                             <DataGridTextColumn Header="Turnaround Time"
-                                                Binding="{Binding TurnaroundTime}"
-                                                ElementStyle="{StaticResource CenteredTextStyle}"
-                                                Width="*"/>
+                                                  Binding="{Binding TurnaroundTime}"
+                                                  ElementStyle="{StaticResource CenteredTextStyle}"
+                                                  MinWidth="110"
+                                                  Width="*"/>
+
                             <DataGridTextColumn Header="Schedule Status"
-                                                Binding="{Binding ScheduleStatus}"
-                                                ElementStyle="{StaticResource CenteredTextStyle}"
-                                                Width="*"/>
+                                                  Binding="{Binding ScheduleStatus}"
+                                                  ElementStyle="{StaticResource CenteredTextStyle}"
+                                                  MinWidth="110"
+                                                  Width="*"/>
+
                         </DataGrid.Columns>
                     </DataGrid>
                 </Border>
 
-                <!-- RIGHT: SCROLLABLE UPDATE STATUS PANEL -->
+                <!-- RIGHT: ORDER UPDATE PANEL -->
                 <Border x:Name="UpdateStatusPanel"
                         Grid.Column="2"
                         Style="{StaticResource CardStyle}"
-                        Padding="12"
-                        Visibility="Collapsed">
+                        Padding="14"
+                        Visibility="Collapsed"
+                        BorderBrush="#555555"
+                        BorderThickness="1">
 
-                    <ScrollViewer x:Name="UpdateStatusScrollViewer"
-                                  VerticalScrollBarVisibility="Auto"
-                                  HorizontalScrollBarVisibility="Disabled"
-                                  CanContentScroll="False">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                  HorizontalScrollBarVisibility="Disabled">
 
-                        <StackPanel Margin="4,4,8,10">
+                        <StackPanel Margin="6,6,6,12">
 
-                            <!-- SELECTED ORDER DETAILS -->
-                            <Border Background="#E5E5E5"
+                            <!-- SELECTED ORDER -->
+                            <Border Background="#D0D0D0"
                                     CornerRadius="10"
-                                    Padding="12"
+                                    Padding="16"
                                     Margin="0,0,0,15">
 
                                 <Grid>
@@ -518,11 +452,9 @@
                                     </Grid.ColumnDefinitions>
 
                                     <StackPanel>
-
                                         <TextBlock x:Name="txtSelectedTracking"
                                                    FontSize="14"
-                                                   FontWeight="Bold"
-                                                   Foreground="#08065E"/>
+                                                   FontWeight="Bold"/>
 
                                         <TextBlock x:Name="txtSelectedCustomer"
                                                    FontSize="12"
@@ -530,108 +462,81 @@
 
                                         <TextBlock x:Name="txtSelectedService"
                                                    FontSize="12"
-                                                   Margin="0,4,0,0"/>
+                                                   Margin="0,5,0,0"/>
                                     </StackPanel>
 
                                     <Button Grid.Column="1"
-                                            Width="26"
-                                            Height="26"
                                             Content="✕"
-                                            Background="Transparent"
-                                            BorderThickness="0"
-                                            Cursor="Hand"
+                                            Width="27"
+                                            Height="27"
                                             Click="btnCloseDetails_Click"/>
                                 </Grid>
                             </Border>
 
-                            <!-- STATUS INFORMATION -->
-                            <TextBlock Text="Status Information"
-                                       FontSize="15"
-                                       FontWeight="Bold"
-                                       Foreground="#08065E"
+                            <Separator Background="#666666"
                                        Margin="0,0,0,12"/>
 
-                            <Grid Margin="0,0,0,10">
+                            <!-- STATUS INFORMATION -->
+                            <TextBlock Text="Status Information"
+                                       FontWeight="Bold"
+                                       FontSize="15"
+                                       Margin="4,0,0,10"/>
+
+                            <Grid Margin="4,0,0,15">
+
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="130"/>
+                                    <ColumnDefinition Width="140"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="36"/>
+                                    <RowDefinition Height="36"/>
+                                </Grid.RowDefinitions>
 
                                 <TextBlock Text="Service Status"
-                                           FontSize="12"
-                                           VerticalAlignment="Center"/>
+                                           VerticalAlignment="Center"
+                                           FontSize="12"/>
 
-                                <ComboBox x:Name="cmbServiceStatus"
-                                          Grid.Column="1"
-                                          Height="30">
-                                    <ComboBoxItem Content="Not Started"/>
-                                    <ComboBoxItem Content="In Progress"/>
-                                    <ComboBoxItem Content="Completed"/>
-                                    <ComboBoxItem Content="Unclaimed"/>
-                                    <ComboBoxItem Content="Dispatched"/>
-                                </ComboBox>
-                            </Grid>
+                                <TextBlock x:Name="txtServiceStatus"
+                                           Grid.Column="1"
+                                           VerticalAlignment="Center"
+                                           FontWeight="SemiBold"
+                                           FontSize="12"/>
 
-                            <Grid Margin="0,0,0,15">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="130"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-
-                                <TextBlock Text="Schedule Status"
-                                           FontSize="12"
-                                           VerticalAlignment="Center"/>
+                                <TextBlock Grid.Row="1"
+                                           Text="Schedule Status"
+                                           VerticalAlignment="Center"
+                                           FontSize="12"/>
 
                                 <ComboBox x:Name="cmbScheduleStatus"
+                                          Grid.Row="1"
                                           Grid.Column="1"
-                                          Height="30">
+                                          Height="29"
+                                          FontSize="12">
+
                                     <ComboBoxItem Content="On Schedule"/>
                                     <ComboBoxItem Content="Delayed"/>
+
                                 </ComboBox>
                             </Grid>
 
-                            <Separator Margin="0,0,0,15"/>
-
-                            <!-- PROGRESS STAGE HEADER -->
+                            <!-- PROGRESS STAGES -->
                             <TextBlock Text="Progress Stage"
-                                       FontSize="17"
+                                       FontSize="15"
                                        FontWeight="Bold"
-                                       Foreground="#08065E"
-                                       Margin="0,0,0,8"/>
+                                       Margin="4,0,0,6"/>
 
-                            <!-- COLUMN LABELS -->
-                            <Grid Margin="0,0,0,8">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="35"/>
-                                    <ColumnDefinition Width="85"/>
-                                    <ColumnDefinition Width="110"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
+                            <TextBlock Text="Employee Name / ID"
+                                       HorizontalAlignment="Right"
+                                       FontSize="11"
+                                       Margin="0,0,4,6"/>
 
-                                <TextBlock Grid.Column="1"
-                                           Text="Stage"
-                                           FontSize="11"
-                                           FontWeight="SemiBold"/>
-
-                                <TextBlock Grid.Column="2"
-                                           Text="Status"
-                                           FontSize="11"
-                                           FontWeight="SemiBold"
-                                           HorizontalAlignment="Center"/>
-
-                                <TextBlock Grid.Column="3"
-                                           Text="Employee Name / Code"
-                                           FontSize="11"
-                                           FontWeight="SemiBold"
-                                           TextWrapping="Wrap"
-                                           HorizontalAlignment="Center"/>
-                            </Grid>
-
-                            <!-- PROGRESS STAGE GRID -->
                             <Grid>
+
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="35"/>
-                                    <ColumnDefinition Width="85"/>
+                                    <ColumnDefinition Width="25"/>
+                                    <ColumnDefinition Width="75"/>
                                     <ColumnDefinition Width="110"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
@@ -645,23 +550,26 @@
 
                                 <!-- WASHING -->
                                 <CheckBox x:Name="chkWashing"
-                                           Checked="StageCheckBox_Changed"
-                                           Unchecked="StageCheckBox_Changed"
                                           Grid.Row="0"
                                           Grid.Column="0"
-                                          Style="{StaticResource StageCheckBoxStyle}"/>
+                                          VerticalAlignment="Center"
+                                          IsEnabled="False"/>
 
                                 <TextBlock Grid.Row="0"
                                            Grid.Column="1"
                                            Text="Washing"
                                            VerticalAlignment="Center"
-                                           FontSize="13"/>
+                                           FontSize="12"/>
 
                                 <ComboBox x:Name="cmbWashing"
-                                           SelectionChanged="StageCombo_SelectionChanged"
                                           Grid.Row="0"
                                           Grid.Column="2"
-                                          Style="{StaticResource StageComboStyle}"/>
+                                          Style="{StaticResource StageComboStyle}"
+                                          SelectionChanged="StageCombo_SelectionChanged">
+                                    <ComboBoxItem Content="Not Started"/>
+                                    <ComboBoxItem Content="Current"/>
+                                    <ComboBoxItem Content="Completed"/>
+                                </ComboBox>
 
                                 <TextBox x:Name="txtWashingEmployee"
                                          Grid.Row="0"
@@ -670,23 +578,26 @@
 
                                 <!-- DRYING -->
                                 <CheckBox x:Name="chkDrying"
-                                           Checked="StageCheckBox_Changed"
-                                           Unchecked="StageCheckBox_Changed"
                                           Grid.Row="1"
                                           Grid.Column="0"
-                                          Style="{StaticResource StageCheckBoxStyle}"/>
+                                          VerticalAlignment="Center"
+                                          IsEnabled="False"/>
 
                                 <TextBlock Grid.Row="1"
                                            Grid.Column="1"
                                            Text="Drying"
                                            VerticalAlignment="Center"
-                                           FontSize="13"/>
+                                           FontSize="12"/>
 
                                 <ComboBox x:Name="cmbDrying"
-                                           SelectionChanged="StageCombo_SelectionChanged"
                                           Grid.Row="1"
                                           Grid.Column="2"
-                                          Style="{StaticResource StageComboStyle}"/>
+                                          Style="{StaticResource StageComboStyle}"
+                                          SelectionChanged="StageCombo_SelectionChanged">
+                                    <ComboBoxItem Content="Not Started"/>
+                                    <ComboBoxItem Content="Current"/>
+                                    <ComboBoxItem Content="Completed"/>
+                                </ComboBox>
 
                                 <TextBox x:Name="txtDryingEmployee"
                                          Grid.Row="1"
@@ -695,23 +606,26 @@
 
                                 <!-- FOLDING -->
                                 <CheckBox x:Name="chkFolding"
-                                           Checked="StageCheckBox_Changed"
-                                           Unchecked="StageCheckBox_Changed"
                                           Grid.Row="2"
                                           Grid.Column="0"
-                                          Style="{StaticResource StageCheckBoxStyle}"/>
+                                          VerticalAlignment="Center"
+                                          IsEnabled="False"/>
 
                                 <TextBlock Grid.Row="2"
                                            Grid.Column="1"
                                            Text="Folding"
                                            VerticalAlignment="Center"
-                                           FontSize="13"/>
+                                           FontSize="12"/>
 
                                 <ComboBox x:Name="cmbFolding"
-                                           SelectionChanged="StageCombo_SelectionChanged"
                                           Grid.Row="2"
                                           Grid.Column="2"
-                                          Style="{StaticResource StageComboStyle}"/>
+                                          Style="{StaticResource StageComboStyle}"
+                                          SelectionChanged="StageCombo_SelectionChanged">
+                                    <ComboBoxItem Content="Not Started"/>
+                                    <ComboBoxItem Content="Current"/>
+                                    <ComboBoxItem Content="Completed"/>
+                                </ComboBox>
 
                                 <TextBox x:Name="txtFoldingEmployee"
                                          Grid.Row="2"
@@ -720,80 +634,92 @@
 
                                 <!-- PACKING -->
                                 <CheckBox x:Name="chkPacking"
-                                           Checked="StageCheckBox_Changed"
-                                           Unchecked="StageCheckBox_Changed"
                                           Grid.Row="3"
                                           Grid.Column="0"
-                                          Style="{StaticResource StageCheckBoxStyle}"/>
+                                          VerticalAlignment="Center"
+                                          IsEnabled="False"/>
 
                                 <TextBlock Grid.Row="3"
                                            Grid.Column="1"
                                            Text="Packing"
                                            VerticalAlignment="Center"
-                                           FontSize="13"/>
+                                           FontSize="12"/>
 
                                 <ComboBox x:Name="cmbPacking"
-                                           SelectionChanged="StageCombo_SelectionChanged"
                                           Grid.Row="3"
                                           Grid.Column="2"
-                                          Style="{StaticResource StageComboStyle}"/>
+                                          Style="{StaticResource StageComboStyle}"
+                                          SelectionChanged="StageCombo_SelectionChanged">
+                                    <ComboBoxItem Content="Not Started"/>
+                                    <ComboBoxItem Content="Current"/>
+                                    <ComboBoxItem Content="Completed"/>
+                                </ComboBox>
 
                                 <TextBox x:Name="txtPackingEmployee"
                                          Grid.Row="3"
                                          Grid.Column="3"
                                          Style="{StaticResource EmployeeTextBoxStyle}"/>
+
                             </Grid>
 
-                            <Separator Margin="0,18,0,15"/>
+                            <!-- UPDATE STATUS BUTTON -->
+                            <Button x:Name="btnUpdateStatus"
+                                    Content="Update Status"
+                                    Style="{StaticResource PrimaryButtonStyle}"
+                                    HorizontalAlignment="Right"
+                                    MinWidth="125"
+                                    Height="38"
+                                    Margin="0,14,0,14"
+                                    Click="btnUpdateStatus_Click"/>
 
-                            <!-- UPLOAD AND DISPATCH -->
-                            <Grid Margin="0,0,0,15">
+                            <!-- SEPARATOR -->
+                            <Separator Background="#777777"
+                                       Margin="0,0,0,14"/>
+
+                            <!-- UPLOAD PHOTO AND DISPATCH -->
+                            <Grid Margin="0,0,0,12">
+
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="12"/>
+                                    <ColumnDefinition Width="10"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
 
                                 <Button x:Name="btnUploadPhoto"
                                         Grid.Column="0"
-                                        Height="36"
                                         Content="Upload Photo"
+                                        Height="38"
+                                        HorizontalAlignment="Stretch"
                                         Style="{StaticResource PrimaryButtonStyle}"
                                         Click="btnUploadPhoto_Click"/>
 
-                                <Button x:Name="btnDispatch"
+                                <Button x:Name="btnDispatchOrder"
                                         Grid.Column="2"
-                                        Height="36"
                                         Content="Dispatch"
+                                        Height="38"
+                                        HorizontalAlignment="Stretch"
                                         Style="{StaticResource PrimaryButtonStyle}"
-                                        Click="btnDispatch_Click"/>
+                                        Click="btnDispatchOrder_Click"/>
+
                             </Grid>
 
                             <!-- NOTES -->
-                            <TextBlock Text="Notes"
-                                       FontSize="14"
-                                       FontWeight="SemiBold"
+                            <TextBlock Text="Note:"
+                                       FontSize="12"
                                        Foreground="#08065E"
-                                       Margin="0,0,0,6"/>
+                                       Margin="0,0,0,5"/>
 
                             <TextBox x:Name="txtNotes"
-                                     Height="90"
+                                     Height="115"
                                      TextWrapping="Wrap"
                                      AcceptsReturn="True"
-                                     VerticalScrollBarVisibility="Auto"
                                      Padding="8"
-                                     Margin="0,0,0,15"/>
-
-                            <!-- UPDATE STATUS BUTTON -->
-                            <Button x:Name="btnUpdateStatus"
-                                    Height="40"
-                                    Content="Update Status"
-                                    Style="{StaticResource PrimaryButtonStyle}"
-                                    Click="btnUpdateStatus_Click"/>
+                                     VerticalScrollBarVisibility="Auto"/>
 
                         </StackPanel>
                     </ScrollViewer>
                 </Border>
+
             </Grid>
         </Grid>
     </Grid>

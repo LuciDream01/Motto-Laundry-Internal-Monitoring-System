@@ -1,8 +1,6 @@
-﻿
-using System;
+﻿using System;
 using System.Windows;
 using System.Windows.Controls;
-
 using MottoLaundry.Views.Dashboard;
 using MottoLaundry.Views.CustomerRecord;
 using MottoLaundry.Views.StatusMonitoring;
@@ -13,7 +11,7 @@ namespace MottoLaundry.Views
 {
     public partial class MainWindow : Window
     {
-        // Shared ViewModel
+        // Shared ViewModel instance
         private readonly CustomerRecordViewModel _viewModel;
 
         public MainWindow()
@@ -43,7 +41,7 @@ namespace MottoLaundry.Views
                     break;
 
                 case "StatusMonitoring":
-                    ChangeSection(new StatusMonitoringView());
+                    ChangeSection(new StatusMonitoringView(_viewModel));
                     break;
 
                 case "Report":
@@ -55,20 +53,17 @@ namespace MottoLaundry.Views
         private void OpenDashboard()
         {
             var dashboardView = new DashboardView(_viewModel);
-
             ChangeSection(dashboardView);
         }
 
         private void OpenCustomerRecord()
         {
-            var customerRecordView =
-                new CustomerRecordView(_viewModel);
+            var customerRecordView = new CustomerRecordView(_viewModel);
 
-            customerRecordView.NavigateToAddOrderRequested +=
-                (s, e) =>
-                {
-                    OpenAddOrder();
-                };
+            customerRecordView.NavigateToAddOrderRequested += (s, e) =>
+            {
+                OpenAddOrder();
+            };
 
             ChangeSection(customerRecordView);
         }
@@ -76,7 +71,6 @@ namespace MottoLaundry.Views
         private void OpenAddOrder()
         {
             var addOrderView = new AddOrderView(_viewModel);
-
             ChangeSection(addOrderView);
         }
 

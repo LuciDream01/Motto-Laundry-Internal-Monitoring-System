@@ -1,34 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using MottoLaundry.ViewModel;
-using MottoLaundry.ViewModel;
+using MottoLaundry.Models;
+using MottoLaundry.ViewModel; // Make sure this namespace is included
 
 namespace MottoLaundry.Views.Dashboard
 {
-    /// <summary>
-    /// Interaction logic for DashboardView.xaml
-    /// </summary>
-
     public partial class DashboardView : UserControl
     {
+        private readonly CustomerRecordViewModel _viewModel;
+
         public DashboardView(CustomerRecordViewModel viewModel)
         {
             InitializeComponent();
+            _viewModel = viewModel;
+            txtCurrentDate.Text = DateTime.Now.ToString("MMMM dd, yyyy");
 
-            // Retrieving Data from View Model to Display on the DataGridView
-            DataContext = viewModel;
-            dgOrders.ItemsSource = viewModel.DashboardData;
-            
+            dgOrders.ItemsSource = _viewModel.Orders;
+            UpdateDashboardCounts();
+
+            _viewModel.Orders.CollectionChanged += (s, e) => UpdateDashboardCounts();
+        }
+
+        private void UpdateDashboardCounts()
+        {
+            txtIntakeCount.Text = _viewModel.Orders.Count.ToString();
+            txtNotStartedCount.Text = _viewModel.Orders.Count(x => x.ServiceStatus == "Not Started").ToString();
+            txtInProgressCount.Text = _viewModel.Orders.Count(x => x.ServiceStatus == "In Progress").ToString();
+            txtCompletedCount.Text = _viewModel.Orders.Count(x => x.ServiceStatus == "Completed").ToString();
+            txtUnclaimedCount.Text = _viewModel.Orders.Count(x => x.ServiceStatus == "Unclaimed").ToString();
+            txtDispatchedCount.Text = _viewModel.Orders.Count(x => x.ServiceStatus == "Dispatched").ToString();
         }
     }
 }

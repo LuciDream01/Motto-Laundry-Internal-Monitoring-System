@@ -286,7 +286,7 @@
                         </StackPanel>
 
                         <TextBlock x:Name="txtIntakeCount"
-                                   Text="15"
+                                   Text="0"
                                    Style="{StaticResource StatusNumberStyle}"/>
 
                         <TextBlock Text="View Intake"
@@ -315,7 +315,7 @@
                         </StackPanel>
 
                         <TextBlock x:Name="txtNotStartedCount"
-                                   Text="3"
+                                   Text="0"
                                    Style="{StaticResource StatusNumberStyle}"/>
 
                         <TextBlock Text="View Pending"
@@ -344,7 +344,7 @@
                         </StackPanel>
 
                         <TextBlock x:Name="txtInProgressCount"
-                                   Text="5"
+                                   Text="0"
                                    Style="{StaticResource StatusNumberStyle}"/>
 
                         <TextBlock Text="View In Progress"
@@ -373,7 +373,7 @@
                         </StackPanel>
 
                         <TextBlock x:Name="txtCompletedCount"
-                                   Text="2"
+                                   Text="0"
                                    Style="{StaticResource StatusNumberStyle}"/>
 
                         <TextBlock Text="View Completed"
@@ -402,7 +402,7 @@
                         </StackPanel>
 
                         <TextBlock x:Name="txtUnclaimedCount"
-                                   Text="5"
+                                   Text="0"
                                    Style="{StaticResource StatusNumberStyle}"/>
 
                         <TextBlock Text="View Unclaimed"
@@ -431,7 +431,7 @@
                         </StackPanel>
 
                         <TextBlock x:Name="txtDispatchedCount"
-                                   Text="2"
+                                   Text="0"
                                    Style="{StaticResource StatusNumberStyle}"/>
 
                         <TextBlock Text="View Dispatched"
@@ -472,40 +472,40 @@
                         <DataGrid.Columns>
 
                             <DataGridTextColumn Header="Tracking #"
-                                                Binding="{Binding TrackingNumber}"
-                                                ElementStyle="{StaticResource CenteredTextStyle}"
-                                                Width="*"/>
+                                                  Binding="{Binding TrackingNumber}"
+                                                  ElementStyle="{StaticResource CenteredTextStyle}"
+                                                  Width="*"/>
 
                             <DataGridTextColumn Header="Name"
-                                                Binding="{Binding CustomerName}"
-                                                ElementStyle="{StaticResource CenteredTextStyle}"
-                                                Width="*"/>
+                                                  Binding="{Binding CustomerName}"
+                                                  ElementStyle="{StaticResource CenteredTextStyle}"
+                                                  Width="*"/>
 
                             <DataGridTextColumn Header="Service Code"
-                                                Binding="{Binding ServiceCode}"
-                                                ElementStyle="{StaticResource CenteredTextStyle}"
-                                                Width="*"/>
+                                                  Binding="{Binding ServiceCode}"
+                                                  ElementStyle="{StaticResource CenteredTextStyle}"
+                                                  Width="*"/>
 
                             <DataGridTextColumn Header="Service Status"
-                                                Binding="{Binding ServiceStatus}"
-                                                ElementStyle="{StaticResource CenteredTextStyle}"
-                                                Width="*"/>
+                                                  Binding="{Binding ServiceStatus}"
+                                                  ElementStyle="{StaticResource CenteredTextStyle}"
+                                                  Width="*"/>
 
                             <DataGridTextColumn Header="Progress Stage"
-                                                Binding="{Binding ProgressStage}"
-                                                ElementStyle="{StaticResource CenteredTextStyle}"
-                                                Width="*"/>
+                                                  Binding="{Binding ProgressStage}"
+                                                  ElementStyle="{StaticResource CenteredTextStyle}"
+                                                  Width="*"/>
 
+                            <!-- FIXED: Changed TurnAroundTime to TurnaroundTime -->
                             <DataGridTextColumn Header="Turnaround Time"
-                                                Binding="{Binding TurnAroundTime,
-                                                          StringFormat={}{0} Hours}"
-                                                ElementStyle="{StaticResource CenteredTextStyle}"
-                                                Width="*"/>     
+                                                  Binding="{Binding TurnaroundTime, StringFormat={}{0} Hours}"
+                                                  ElementStyle="{StaticResource CenteredTextStyle}"
+                                                  Width="*"/>
 
                             <DataGridTextColumn Header="Schedule Status"
-                                                Binding="{Binding ScheduleStatus}"
-                                                ElementStyle="{StaticResource CenteredTextStyle}"
-                                                Width="*"/>
+                                                  Binding="{Binding ScheduleStatus}"
+                                                  ElementStyle="{StaticResource CenteredTextStyle}"
+                                                  Width="*"/>
 
                         </DataGrid.Columns>
                     </DataGrid>

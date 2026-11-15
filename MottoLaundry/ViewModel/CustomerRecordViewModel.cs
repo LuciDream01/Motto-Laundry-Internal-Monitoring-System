@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -11,224 +10,94 @@ namespace MottoLaundry.ViewModel
 {
     public class CustomerRecordViewModel : INotifyPropertyChanged
     {
-        // PRIVATE FIELDS
         private string _trackingNumber = string.Empty;
         private string _customerName = string.Empty;
         private string _serviceCode = string.Empty;
         private double _load;
 
-        private int _turnAroundTime = 72;
-        private string _serviceStatus = "Not Started";
-        private string _progressStage = "Pending";
-        private string _scheduleStatus = "On Schedule";
+        public ObservableCollection<OrderModel> Orders { get; } = new ObservableCollection<OrderModel>();
 
-        // COLLECTIONS
-        public ObservableCollection<DashboardModel> DashboardData
-        { get; } = new ObservableCollection<DashboardModel>();
-
-        public ObservableCollection<CustomerRecordModel> CustomerRecordData
-        { get; } = new ObservableCollection<CustomerRecordModel>();
-
-        // PROPERTY CHANGED EVENT
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        // TRACKING NUMBER
         public string TrackingNumber
         {
             get => _trackingNumber;
-            set
-            {
-                if (_trackingNumber != value)
-                {
-                    _trackingNumber = value;
-                    OnPropertyChanged();
-                    CommandManager.InvalidateRequerySuggested();
-                }
-            }
+            set { if (_trackingNumber != value) { _trackingNumber = value; OnPropertyChanged(); CommandManager.InvalidateRequerySuggested(); } }
         }
 
-        // CUSTOMER NAME
         public string CustomerName
         {
             get => _customerName;
-            set
-            {
-                if (_customerName != value)
-                {
-                    _customerName = value;
-                    OnPropertyChanged();
-                    CommandManager.InvalidateRequerySuggested();
-                }
-            }
+            set { if (_customerName != value) { _customerName = value; OnPropertyChanged(); CommandManager.InvalidateRequerySuggested(); } }
         }
 
-        // SERVICE CODE
         public string ServiceCode
         {
             get => _serviceCode;
-            set
-            {
-                if (_serviceCode != value)
-                {
-                    _serviceCode = value;
-                    OnPropertyChanged();
-                }
-            }
+            set { if (_serviceCode != value) { _serviceCode = value; OnPropertyChanged(); } }
         }
 
-        // LOAD
         public double Load
         {
             get => _load;
-            set
-            {
-                if (_load != value)
-                {
-                    _load = value;
-                    OnPropertyChanged();
-                }
-            }
+            set { if (_load != value) { _load = value; OnPropertyChanged(); } }
         }
 
-        // TURNAROUND TIME
-        public int TurnAroundTime
-        {
-            get => _turnAroundTime;
-            set
-            {
-                if (_turnAroundTime != value)
-                {
-                    _turnAroundTime = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
-
-        // SERVICE STATUS
-        public string ServiceStatus
-        {
-            get => _serviceStatus;
-            set
-            {
-                if (_serviceStatus != value)
-                {
-                    _serviceStatus = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
-
-        // PROGRESS STAGE
-        public string ProgressStage
-        {
-            get => _progressStage;
-            set
-            {
-                if (_progressStage != value)
-                {
-                    _progressStage = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
-
-        // SCHEDULE STATUS
-        public string ScheduleStatus
-        {
-            get => _scheduleStatus;
-            set
-            {
-                if (_scheduleStatus != value)
-                {
-                    _scheduleStatus = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
-
-        // SAVE COMMAND
         public ICommand SaveCommand { get; }
 
         public CustomerRecordViewModel()
         {
             SaveCommand = new RelayCommand(ExecuteSave, CanSave);
+
+            // Sample mockup data for testing
+            Orders.Add(new OrderModel { TrackingNumber = "TRK-001", CustomerName = "Juan Dela Cruz", ServiceCode = "FULL", Load = 8.5 });
+            Orders.Add(new OrderModel { TrackingNumber = "TRK-002", CustomerName = "Maria Santos", ServiceCode = "SELF", Load = 5.0 });
         }
 
         private void ExecuteSave()
         {
-            // SAVE COMPLETE ORDER FOR DASHBOARD
-            var completeOrder = new DashboardModel
+            var newOrder = new OrderModel
             {
-                TrackingNumber = TrackingNumber,
-                CustomerName = CustomerName,
-                ServiceCode = ServiceCode,
+                TrackingNumber = TrackingNumber.Trim(),
+                CustomerName = CustomerName.Trim(),
+                ServiceCode = ServiceCode.Trim(),
                 Load = Load,
-                ServiceStatus = ServiceStatus,
-                ProgressStage = ProgressStage,
-                TurnAroundTime = TurnAroundTime,
-                ScheduleStatus = ScheduleStatus
+                CreatedAt = DateTime.Now,
+                ServiceStatus = "Not Started",
+                ProgressStage = "Pending",
+                ScheduleStatus = "On Schedule"
             };
 
-            DashboardData.Add(completeOrder);
+            Orders.Add(newOrder);
 
-            // SAVE BASIC RECORD FOR CUSTOMER RECORDS
-            var basicRecord = new CustomerRecordModel
-            {
-                TrackingNumber = TrackingNumber,
-                CustomerName = CustomerName,
-                ServiceCode = ServiceCode,
-                Load = Load
-            };
+            MessageBox.Show($"Successfully Added New Order!\nTracking: {newOrder.TrackingNumber}", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
 
-            CustomerRecordData.Add(basicRecord);
-
-            MessageBox.Show(
-                "Successfully Added New Order!",
-                "Success",
-                MessageBoxButton.OK,
-                MessageBoxImage.Information
-            );
-
-            // RESET FORM
+            // Reset Form Fields
             TrackingNumber = string.Empty;
             CustomerName = string.Empty;
             ServiceCode = string.Empty;
             Load = 0;
-            TurnAroundTime = 72;
-            ServiceStatus = "Not Started";
-            ProgressStage = "Pending";
-            ScheduleStatus = "On Schedule";
         }
 
         private bool CanSave()
         {
-            return !string.IsNullOrWhiteSpace(TrackingNumber)
-                && !string.IsNullOrWhiteSpace(CustomerName);
+            return !string.IsNullOrWhiteSpace(TrackingNumber) && !string.IsNullOrWhiteSpace(CustomerName);
         }
 
-        protected void OnPropertyChanged(
-            [CallerMemberName] string? propertyName = null)
+        protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
         {
-            PropertyChanged?.Invoke(
-                this,
-                new PropertyChangedEventArgs(propertyName)
-            );
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 
-    // RELAY COMMAND
     public class RelayCommand : ICommand
     {
         private readonly Action _execute;
         private readonly Func<bool>? _canExecute;
 
-        public RelayCommand(
-            Action execute,
-            Func<bool>? canExecute = null)
+        public RelayCommand(Action execute, Func<bool>? canExecute = null)
         {
-            _execute = execute
-                ?? throw new ArgumentNullException(nameof(execute));
-
+            _execute = execute ?? throw new ArgumentNullException(nameof(execute));
             _canExecute = canExecute;
         }
 
@@ -238,14 +107,7 @@ namespace MottoLaundry.ViewModel
             remove => CommandManager.RequerySuggested -= value;
         }
 
-        public bool CanExecute(object? parameter)
-        {
-            return _canExecute == null || _canExecute();
-        }
-
-        public void Execute(object? parameter)
-        {
-            _execute();
-        }
+        public bool CanExecute(object? parameter) => _canExecute == null || _canExecute();
+        public void Execute(object? parameter) => _execute();
     }
 }

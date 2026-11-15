@@ -1,6 +1,4 @@
-﻿
-using System;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 using MottoLaundry.ViewModel;
 
 namespace MottoLaundry.Views.CustomerRecord
@@ -11,12 +9,10 @@ namespace MottoLaundry.Views.CustomerRecord
         {
             InitializeComponent();
 
-            // Display current date
-            txtCurrentDate.Text =
-                DateTime.Now.ToString("MMMM dd, yyyy");
-
-            // Use shared ViewModel from MainWindow
+            // Set the DataContext so all your textboxes and SaveCommand work automatically
             DataContext = viewModel;
+
+            txtCurrentDate.Text = System.DateTime.Now.ToString("MMMM dd, yyyy");
         }
     }
 }
