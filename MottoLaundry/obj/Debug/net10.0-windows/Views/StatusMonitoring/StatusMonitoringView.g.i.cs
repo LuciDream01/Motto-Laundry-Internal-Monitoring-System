@@ -332,7 +332,8 @@ namespace MottoLaundry.Views.StatusMonitoring {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MottoLaundry;component/views/statusmonitoring/statusmonitoringview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MottoLaundry;V1.0.0.0;component/views/statusmonitoring/statusmonitoringview.xaml" +
+                    "", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\StatusMonitoring\StatusMonitoringView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

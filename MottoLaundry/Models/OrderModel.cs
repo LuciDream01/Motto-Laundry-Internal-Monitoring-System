@@ -6,6 +6,9 @@ namespace MottoLaundry.Models
 {
     public class OrderModel : INotifyPropertyChanged
     {
+
+        //  Centralized Model: Shared Model that can be used by
+        //  Dashboard, CustomerRecord, StatusMonitoring, and Report
         public event PropertyChangedEventHandler PropertyChanged;
         private void Notify([CallerMemberName] string property = null) =>
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
