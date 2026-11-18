@@ -9,7 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Icon\AddOrderIcon.png" />
+    <None Remove="Resources\Icon\CalendarIcon.png" />
+    <None Remove="Resources\Icon\CompletedIcon.png" />
+    <None Remove="Resources\Icon\DispatchedIcon.png" />
+    <None Remove="Resources\Icon\InProgressIcon.png" />
+    <None Remove="Resources\Icon\IntakeIcon.png" />
     <None Remove="Resources\Icon\MottoLaundryIcon.png" />
+    <None Remove="Resources\Icon\NotStartedIcon.png" />
+    <None Remove="Resources\Icon\UnclaimedIcon.png" />
     <None Remove="Resources\Image\MottoLaundryLogIn.jpg" />
   </ItemGroup>
 
@@ -23,7 +31,31 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\Icon\AddOrderIcon.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icon\CalendarIcon.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icon\CompletedIcon.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icon\DispatchedIcon.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icon\InProgressIcon.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icon\IntakeIcon.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Icon\MottoLaundryIcon.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icon\NotStartedIcon.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icon\UnclaimedIcon.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Image\MottoLaundryLogIn.jpg">

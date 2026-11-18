@@ -83,12 +83,33 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border Background="{TemplateBinding Background}"
-                                CornerRadius="6"
-                                Padding="12,8">
+                                CornerRadius="9"
+                                Padding="10,8">
+                            <Border.Effect>
+                                <DropShadowEffect Color="#444444"
+                                                  BlurRadius="5"
+                                                  ShadowDepth="4"
+                                                  Opacity="0.55"/>
+                            </Border.Effect>
                             <ContentPresenter HorizontalAlignment="Center"
                                               VerticalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- CALENDAR CARD WITH STRONG SHADOW -->
+        <Style x:Key="CalendarCardStyle" TargetType="Border">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="CornerRadius" Value="9"/>
+            <Setter Property="Padding" Value="8"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#444444"
+                                      BlurRadius="5"
+                                      ShadowDepth="4"
+                                      Opacity="0.55"/>
                 </Setter.Value>
             </Setter>
         </Style>
@@ -353,7 +374,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="110"/>
                 <RowDefinition Height="25"/>
-                <RowDefinition Height="115"/>
+                <RowDefinition Height="145"/>
                 <RowDefinition Height="25"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
@@ -399,16 +420,17 @@
                     </Grid.RowDefinitions>
 
                     <Border Grid.Row="0"
-                            Style="{StaticResource CardStyle}"
-                            Padding="8">
+                            Style="{StaticResource CalendarCardStyle}">
 
                         <StackPanel Orientation="Horizontal"
                                     VerticalAlignment="Center">
 
-                            <TextBlock Text="▣"
-                                       FontSize="22"
-                                       Foreground="#08065E"
-                                       Margin="0,0,8,0"/>
+                            <Image x:Name="imgCalendar"
+                                   Source="/Resources/Icon/CalendarIcon.png"
+                                   Width="35"
+                                   Height="35"
+                                   Stretch="Uniform"
+                                   Margin="2,0,10,0"/>
 
                             <StackPanel VerticalAlignment="Center">
 
@@ -427,8 +449,21 @@
                     <Button x:Name="btnAddNewOrder"
                             Grid.Row="2"
                             Style="{StaticResource AddOrderButtonStyle}"
-                            FontSize="12"
-                            Content="✚  Add New Order"/>
+                            FontSize="12">
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Center">
+                            <Image x:Name="imgAddOrder"
+                                   Source="/Resources/Icon/AddOrderIcon.png"
+                                   Width="35"
+                                   Height="35"
+                                   Stretch="Uniform"
+                                   Margin="0,0,8,0"/>
+                            <TextBlock Text="Add New Order"
+                                       FontSize="12"
+                                       Foreground="White"
+                                       VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
 
                 </Grid>
             </Grid>
@@ -454,6 +489,9 @@
                                     HorizontalAlignment="Center">
 
                             <Image x:Name="imgIntake"
+                                   Source="/Resources/Icon/IntakeIcon.png"
+                                   Width="45"
+                                   Height="45"
                                    Style="{StaticResource StatusIconStyle}"
                                    Margin="0,0,6,0"/>
 
@@ -488,6 +526,9 @@
                                     HorizontalAlignment="Center">
 
                             <Image x:Name="imgNotStarted"
+                                   Source="/Resources/Icon/NotStartedIcon.png"
+                                   Width="45"
+                                   Height="45"
                                    Style="{StaticResource StatusIconStyle}"
                                    Margin="0,0,6,0"/>
 
@@ -522,6 +563,9 @@
                                     HorizontalAlignment="Center">
 
                             <Image x:Name="imgInProgress"
+                                   Source="/Resources/Icon/InProgressIcon.png"
+                                   Width="45"
+                                   Height="45"
                                    Style="{StaticResource StatusIconStyle}"
                                    Margin="0,0,6,0"/>
 
@@ -556,6 +600,9 @@
                                     HorizontalAlignment="Center">
 
                             <Image x:Name="imgCompleted"
+                                   Source="/Resources/Icon/CompletedIcon.png"
+                                   Width="45"
+                                   Height="45"
                                    Style="{StaticResource StatusIconStyle}"
                                    Margin="0,0,6,0"/>
 
@@ -590,6 +637,9 @@
                                     HorizontalAlignment="Center">
 
                             <Image x:Name="imgUnclaimed"
+                                   Source="/Resources/Icon/UnclaimedIcon.png"
+                                   Width="45"
+                                   Height="45"
                                    Style="{StaticResource StatusIconStyle}"
                                    Margin="0,0,6,0"/>
 
@@ -624,6 +674,9 @@
                                     HorizontalAlignment="Center">
 
                             <Image x:Name="imgDispatched"
+                                   Source="/Resources/Icon/DispatchedIcon.png"
+                                   Width="45"
+                                   Height="45"
                                    Style="{StaticResource StatusIconStyle}"
                                    Margin="0,0,6,0"/>
 
