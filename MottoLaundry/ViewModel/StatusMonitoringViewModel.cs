@@ -1,76 +1,91 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using MottoLaundry.Models;
 using MottoLaundry.Services;
 
 namespace MottoLaundry.ViewModel
 {
+    /// <summary>
+    /// Coordinates Status Monitoring data and operations.
+    /// </summary>
     public class StatusMonitoringViewModel
     {
-        private readonly StatusMonitoringService service = new StatusMonitoringService();
+        private readonly StatusMonitoringService _service;
 
         public ObservableCollection<OrderModel> Orders { get; }
 
         public OrderModel SelectedOrder { get; set; }
 
-        // Constructor with sample data
-        public StatusMonitoringViewModel()
-            : this(new ObservableCollection<OrderModel>
-            {
-                new OrderModel
-                {
-                    TrackingNumber = "TRK-001",
-                    CustomerName = "Juan Dela Cruz",
-                    ServiceCode = "FULL",
-                    ServiceStatus = "Not Started",
-                    ProgressStage = "Not Started",
-                    ScheduleStatus = "On Schedule"
-                },
-                new OrderModel
-                {
-                    TrackingNumber = "TRK-002",
-                    CustomerName = "Maria Santos",
-                    ServiceCode = "SELF",
-                    ServiceStatus = "Not Started",
-                    ProgressStage = "Not Started",
-                    ScheduleStatus = "On Schedule"
-                },
-                new OrderModel
-                {
-                    TrackingNumber = "TRK-003",
-                    CustomerName = "Pedro Reyes",
-                    ServiceCode = "FULL",
-                    ServiceStatus = "Not Started",
-                    ProgressStage = "Not Started",
-                    ScheduleStatus = "On Schedule"
-                }
-            })
+        // =====================================================
+        // SECTION 1: CONSTRUCTOR
+        // =====================================================
+
+        public StatusMonitoringViewModel(
+            ObservableCollection<OrderModel> orders)
         {
+            Orders = orders ??
+                throw new ArgumentNullException(nameof(orders));
+
+            _service = new StatusMonitoringService();
         }
 
-        // Constructor for shared orders
-        public StatusMonitoringViewModel(ObservableCollection<OrderModel> orders)
-        {
-            Orders = orders ?? throw new ArgumentNullException(nameof(orders));
-        }
+        // =====================================================
+        // SECTION 2: UPDATE STATUS
+        // =====================================================
 
-        public void Update(
+        /// <summary>
+        /// Validates and saves progress for the selected order.
+        /// </summary>
+        public async Task UpdateAsync(
             string[] statuses,
             string[] employees,
-            string schedule,
             string notes)
         {
-            service.Update(
+            await _service.UpdateAsync(
                 SelectedOrder,
                 statuses,
                 employees,
-                schedule,
                 notes);
         }
 
-        public void Dispatch()
+        // =====================================================
+        // SECTION 3: DISPATCH
+        // =====================================================
+
+        /// <summary>
+        /// Dispatches the selected order in SQL Server.
+        /// </summary>
+        public async Task DispatchAsync()
         {
-            service.Dispatch(SelectedOrder);
+            await _service.DispatchAsync(SelectedOrder);
+        }
+
+        // =====================================================
+        // SECTION 4: PHOTO UPLOAD
+        // =====================================================
+
+        /// <summary>
+        /// Saves the selected photo for the current order.
+        /// </summary>
+        public async Task UploadPhotoAsync(string filePath)
+        {
+            await _service.UploadPhotoAsync(
+                SelectedOrder,
+                filePath);
+        }
+
+        // =====================================================
+        // SECTION 5: REFRESH
+        // =====================================================
+
+        /// <summary>
+        /// Recalculates derived status information.
+        /// </summary>
+        public void RefreshOrder(OrderModel order)
+        {
+            _service.Refresh(order);
         }
     }
 }
